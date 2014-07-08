@@ -1,0 +1,2 @@
+module AmoebaControllerHelper
+end
