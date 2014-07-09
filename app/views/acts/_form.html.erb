@@ -24,6 +24,12 @@
     <%= f.label :time %><br>
     <%= f.time_field :time %>
   </p>
+  <h3>Select Amoebas </h3>
+  <p>
+    <% @amoebas.each do |amoeba| %>
+    <%=f.check_box :name%><%= amoeba.name %></br>
+    <% end %>
+  </p>
 
     <%= f.submit %>
   </div>

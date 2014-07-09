@@ -11,6 +11,7 @@
     <% @amoebas.each do |amoeba| %>
       <tr>
         <td><%= link_to amoeba.name, amoeba %></td>
+        <td><%= amoeba.generating_number%></td>
         <td><%= amoeba.talent.name %></td>
         <td><%= link_to 'Show', amoeba %></td>
         <td><%= link_to 'Edit', edit_amoeba_path(amoeba) %></td>

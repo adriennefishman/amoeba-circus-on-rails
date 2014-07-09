@@ -16,10 +16,19 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
+    <p>
+    <%= f.label :generating_number %><br>
+    <%= f.number_field :generating_number %>
+  </p>
   <p>
     <%= f.label :talent %><br>
-    <%= f.text_field :talent %>
+    <%= f.select :talent_id, options_for_select(@talents.map{ |s| [s.name, s.id] }) %>
   </p>
+  <p>
+    <%= f.label :act %><br>
+    <%= f.select :act_id, options_for_select(@acts.map{ |s| [s.name, s.id] }) %>
+  </p>
+
     <%= f.submit %>
   </div>
 <% end %>

@@ -4,6 +4,7 @@ class CreateAmoebas < ActiveRecord::Migration
       t.string :name
       t.integer :generating_number
       t.integer :act_id
+      t.integer :talent_id
 
       t.timestamps
     end

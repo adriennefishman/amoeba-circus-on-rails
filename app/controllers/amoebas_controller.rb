@@ -1,6 +1,10 @@
 class AmoebasController < ApplicationController
-  before_action :set_amoeba, only: [:show, :edit, :update, :destroy]
+  before_action :set_amoeba, only: [:split, :show, :edit, :update, :destroy]
 
+  def split
+    @amoeba.split
+    redirect_to amoebas_path
+  end
   # GET /amoebas
   # GET /amoebas.json
   def index
@@ -14,11 +18,15 @@ class AmoebasController < ApplicationController
 
   # GET /amoebas/new
   def new
+    @talents = Talent.all
+    @acts = Act.all
     @amoeba = Amoeba.new
   end
 
   # GET /amoebas/1/edit
   def edit
+    @talents = Talent.all
+    @acts = Act.all
   end
 
   # POST /amoebas
@@ -68,7 +76,7 @@ class AmoebasController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def amoeba_params
-      params[:amoeba]
-    end
+  def amoeba_params
+    params.require(:amoeba).permit(:name, :generating_number, :talent_id, :act_id)
+  end
 end
