@@ -2,6 +2,8 @@ class Amoeba < ActiveRecord::Base
   belongs_to :talent
   belongs_to :act
 
+  validates_presence_of :act
+  
 NAMES = ["Julia", "Amanda", "David", "Hope", "Glenn", "Nikki", "Brad", "Harrison", "Justin", "Jack", "Dawn", "Bobby", "Emily", "Zack", "Jeremy"]
   def split
     2.times do 

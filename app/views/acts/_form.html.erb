@@ -22,14 +22,25 @@
   </p>
   <p>
     <%= f.label :time %><br>
-    <%= f.time_field :time %>
+    <%= f.time_select :time %>
   </p>
-  <h3>Select Amoebas </h3>
-  <p>
-    <% @amoebas.each do |amoeba| %>
-    <%=f.check_box :name%><%= amoeba.name %></br>
+<!--   <p>
+    <%= f.label :amoebas, "Select Amoebas" %>
+    <%= f.collection_check_boxes(:amoebas, Amoeba.all, :id, :name)%>
+  </p> -->
+<!--   <p>
+    <%= f.fields_for :amoebas, Amoeba.new do |amoeba_form| %>
+    <% Amoeba.all.each do |amoeba| %>
+    <%= amoeba_form.check_box :name, {}, amoeba.name %>
+    <%= amoeba.name %>
     <% end %>
-  </p>
+    <%end %>
+  </p> -->
+<!--   <p>
+    <% Amoeba.all.each do |amoeba| %>
+    <input type="checkbox" name="act[amoebas_attributes][][name]" value="<%= amoeba.name %>"><%= amoeba.name %>
+    <% end %>
+  </p> -->
 
     <%= f.submit %>
   </div>
