@@ -10,7 +10,7 @@
   <tbody>
     <% @amoebas.each do |amoeba| %>
       <tr>
-        <td><%= amoeba.name %></td>
+        <td><%= link_to amoeba.name, amoeba %></td>
         <td><%= amoeba.talent.name %></td>
         <td><%= link_to 'Show', amoeba %></td>
         <td><%= link_to 'Edit', edit_amoeba_path(amoeba) %></td>

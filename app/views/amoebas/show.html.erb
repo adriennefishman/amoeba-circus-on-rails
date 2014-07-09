@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1><%= @amoeba.name %></h1>
-<h2><%= @amoeba.talent.name %></h2>
-<h3><%= @amoeba.generating_number %></h3>
+<h2>Talent: <%= @amoeba.talent.name %></h2>
+<h3>Generating Number: <%= @amoeba.generating_number %></h3>
 
 <%= link_to 'Edit', edit_amoeba_path(@amoeba) %> |
 <%= link_to 'Back', amoebas_path %>
